@@ -1,0 +1,277 @@
+:root {
+    --black: #000000;
+    --gold: #D4AF37;
+    --white: #ffffff;
+}
+
+/** FONTS **/
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/PlayfairDisplay-Black.woff2') format('woff2'),
+        url('../assets/fonts/PlayfairDisplay-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+        url('../assets/fonts/PlayfairDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+        url('../assets/fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../assets/fonts/Quicksand-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Quicksand-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/** CSS RESET **/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  body {
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    height: 8vh;
+  }
+
+  nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    background-color: var(--black);
+    height: 8vh;
+    z-index: 999;
+  }
+
+  nav h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    font-family: 'Playfair Display';
+    cursor: pointer;
+  }
+
+  nav svg {
+    fill: var(--gold);
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .main-hero {
+    background: url(../assets/img/kalawan.jpg) no-repeat center center/cover;
+    height: calc(100vh - 8vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .main-hero::before {
+    content: "";
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 8vh);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-hero h1 {
+    font-size: clamp(2rem, 12vw, 100rem);
+    color: var(--white);
+    z-index: 2;
+}
+
+.home-2 {
+    height: calc(100vh - 8vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.home-2 .summary {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.home-2 .summary h3 {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.home-2 .summary p {
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+}
+
+.home-2 .summary h3, .home-2 .summary p {
+    color: var(--white);
+    text-align: center;
+    font-family: 'Quicksand';
+}
+
+.home-3 {
+  background-image: linear-gradient(#00000080, #00000080),
+    url(../assets/img/bbq.jpg);
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0, 50% 60%;
+  background-size: auto, cover;
+  background-attachment: scroll, fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-3 div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 40px;
+}
+
+.home-3 div p {
+  color: var(--white);
+  font-size: clamp(2rem, 3vw, 40rem);
+}
+
+.home-3 div button {
+  border: 3px solid var(--gold);
+  padding: 10px 40px;
+  max-width: 500px;
+  font-size: clamp(1rem, 2vw, 4rem);
+  border-radius: 32px;
+  background-color: var(--gold);
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
+  color: var(--white);
+}
+
+.home-3 div button:hover {
+  background-color: transparent;
+}
+
+.footer {
+  background-color: var(--black);
+  color: var(--gold);
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: clamp(1rem, 1.5vw, 1.7rem);
+}
+
+/** HAMBURGER MENU **/
+.menu-options {
+  height: calc(100vh - 8vh);
+  width: 100%;
+  display: flex;
+  position: fixed;
+  transform: translateY(-100vh);
+  z-index: 3;
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu-options.show {
+  transform: translateY(8vh);
+}
+
+.menu-options .left-side {
+  width: 50%;
+  background: url(../assets/img/plate.jpg);
+  background-size: cover;
+  background-position: 10% 10%;
+}
+
+.menu-options .right-side {
+  width: 50%;
+  background-color: var(--gold);
+  padding: 0px 100px 200px 100px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-options .right-side .options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-options .right-side .options h1 a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-family: 'Quicksand';
+  transform: translateX(-25px);
+  display: inline-block;
+}
+
+.menu-options .right-side .options h1 a:hover {
+  transform: translateX(0px);
+  color: black;
+} 
+
